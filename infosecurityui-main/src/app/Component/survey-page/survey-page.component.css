@@ -1,0 +1,105 @@
+.my-0 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.color-first {
+	background-color: #c6e0b4;
+}
+
+.color-second {
+	background-color: #9bc2e6;
+}
+
+.color-third {
+	background-color: #f4b084;
+}
+
+.label-box {
+	padding: 2px 5px;
+	margin-bottom: 1px;
+}
+
+.colortab {
+	float: right
+}
+
+.pull-right.counter-count ul.nav.navbar-nav.navbar-right {
+    display: flex;
+    align-items: center;
+    margin-right: 0px !important;
+    padding-left: 23px;
+}
+
+ul#ctl00_dvLoggedInUser li.multiuser .location {
+    width: 30%;
+    text-align: right;
+}
+ul#ctl00_dvLoggedInUser li.multiuser .content {
+    width: 70%;
+    padding-left: 10px;
+}
+
+ul#ctl00_dvLoggedInUser li.multiuser .image {
+    display: none;
+}
+ul#ctl00_dvLoggedInUser li.multiuser {
+    color: #000;
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+}
+
+
+.pull-right.counter-count ul.nav.navbar-nav.navbar-right span.glyphicon {
+    color: #fff;
+    margin-right: 5px;
+    font-size: 16px;
+}
+ul#ctl00_dvLoggedInUser li.multiuser .location p {
+    margin-bottom: 2px;
+    padding-right: 10px;
+}
+
+table.table.table-stripped.tableempdetail th {
+    background: #000000;
+    padding: 8px;
+}
+
+.pull-right.counter-count ul.dropdown-menu {
+    padding: 0px;
+}
+.pull-right.counter-count ul li a.dropdown-toggle:hover {
+    background: none;
+}
+.pull-right.counter-count ul li a.dropdown-toggle {
+    padding-top: 10px;
+    padding-bottom: 2px;
+}
+
+.pull-right.counter-count li.welcome-text {
+    position: relative;
+    top: 0px;
+}
+.pull-right.counter-count ul li.open a.dropdown-toggle {
+    background: none;
+}
+.pull-right.counter-count ul li a.dropdown-toggle:focus {
+    background: none;
+}
+.pull-right.counter-count li.welcome-text span#ctl00_lblNoOfVisits {
+    background: #fff !important;
+    color: #000000 !important;
+    font-size: 12px;
+}
+
+.wvtopBg1{
+    background-image: url('../../../assets/images/wave-top.png')
+}
+
+.wvmidBg2{
+    background-image: url('../../../assets/images/wave-mid.png')
+}
+.wvbotBg3{
+    background-image: url('../../../assets/images/wave-bot.png')
+}

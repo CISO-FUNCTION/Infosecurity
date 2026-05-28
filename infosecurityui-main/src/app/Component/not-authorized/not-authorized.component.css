@@ -1,0 +1,37 @@
+  .danger-e {
+            background-color: #ecb7b7 !important;
+        }
+
+        .divComments {
+            margin-top: 30px;
+        }
+
+        section.section-bg-img {
+            width: 75%;
+            margin-top: 5%;
+            margin: 5% auto 0;
+        }
+
+        span.spnHeading {
+            font-size: 30px;
+            color: wheat;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 45px;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        footer.footer-bg-img {
+            position: absolute;
+            width: 100%;
+            bottom: 0px;
+        }
+
+        .dflop{
+            padding: 3% 5%
+        }

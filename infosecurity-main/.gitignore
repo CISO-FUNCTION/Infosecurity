@@ -1,0 +1,16 @@
+*.suo
+*.user
+_ReSharper.*
+
+obj
+packages
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+
+

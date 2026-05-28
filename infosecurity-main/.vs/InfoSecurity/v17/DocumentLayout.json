@@ -1,0 +1,74 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DotNetApp\\infosecurity\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D0701FB5-42F4-4B4E-8764-68374C83EA49}|InfoSecurity\\InfoSecurity.csproj|d:\\dotnetapp\\infosecurity\\infosecurity\\common\\clspatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0701FB5-42F4-4B4E-8764-68374C83EA49}|InfoSecurity\\InfoSecurity.csproj|solutionrelative:infosecurity\\common\\clspatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0701FB5-42F4-4B4E-8764-68374C83EA49}|InfoSecurity\\InfoSecurity.csproj|D:\\DotNetApp\\infosecurity\\infosecurity\\common\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0701FB5-42F4-4B4E-8764-68374C83EA49}|InfoSecurity\\InfoSecurity.csproj|solutionrelative:infosecurity\\common\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0701FB5-42F4-4B4E-8764-68374C83EA49}|InfoSecurity\\InfoSecurity.csproj|D:\\DotNetApp\\infosecurity\\infosecurity\\myauthorizationserverprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0701FB5-42F4-4B4E-8764-68374C83EA49}|InfoSecurity\\InfoSecurity.csproj|solutionrelative:infosecurity\\myauthorizationserverprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsPatch.cs",
+              "DocumentMoniker": "D:\\DotNetApp\\infosecurity\\InfoSecurity\\common\\clsPatch.cs",
+              "RelativeDocumentMoniker": "InfoSecurity\\common\\clsPatch.cs",
+              "ToolTip": "D:\\DotNetApp\\infosecurity\\InfoSecurity\\common\\clsPatch.cs",
+              "RelativeToolTip": "InfoSecurity\\common\\clsPatch.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T07:48:05.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "common.cs",
+              "DocumentMoniker": "D:\\DotNetApp\\infosecurity\\InfoSecurity\\common\\common.cs",
+              "RelativeDocumentMoniker": "InfoSecurity\\common\\common.cs",
+              "ToolTip": "D:\\DotNetApp\\infosecurity\\InfoSecurity\\common\\common.cs",
+              "RelativeToolTip": "InfoSecurity\\common\\common.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T11:11:31.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyAuthorizationServerProvider.cs",
+              "DocumentMoniker": "D:\\DotNetApp\\infosecurity\\InfoSecurity\\MyAuthorizationServerProvider.cs",
+              "RelativeDocumentMoniker": "InfoSecurity\\MyAuthorizationServerProvider.cs",
+              "ToolTip": "D:\\DotNetApp\\infosecurity\\InfoSecurity\\MyAuthorizationServerProvider.cs",
+              "RelativeToolTip": "InfoSecurity\\MyAuthorizationServerProvider.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAhwJ0AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T08:03:08.073Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

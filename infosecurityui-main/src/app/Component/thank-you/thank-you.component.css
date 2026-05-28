@@ -1,0 +1,15 @@
+  body{
+        background-image: none;
+     }
+     .thankyou-wrapper{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+
+     .thankyou-wrapper img{
+        width: calc(100vw - 350px);
+        height: calc(100vh - 100px);
+    }

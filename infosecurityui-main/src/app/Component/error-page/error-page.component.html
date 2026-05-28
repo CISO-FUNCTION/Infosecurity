@@ -1,0 +1,10 @@
+<div class="error-container">
+  <div class="error-content">
+    <p><img [src]="brandConfig.logo.primary" [alt]="brandConfig.logo.alt"  class="loh5667"></p>
+    <h1>Oops!</h1>
+    <h2>{{ brandConfig.messages.errorGeneric }}</h2>
+    <p class="ph-20"><img [src]="brandConfig.images.error" alt="error" class="responsive wpt-200"> </p>
+    <p><a [routerLink]="brandConfig.routes.home">Go back to the Home page</a></p>
+    <p class="ph-20">{{ brandConfig.copyright.text }}</p>
+  </div>
+</div>

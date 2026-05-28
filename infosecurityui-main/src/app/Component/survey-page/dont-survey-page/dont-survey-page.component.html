@@ -1,0 +1,454 @@
+<form [formGroup]="SubmitForm" (ngSubmit)="validateForm()">
+    <h2 class="fs-title bg-info">DON'T's</h2>
+    <div class="table-responsive">
+
+
+
+
+        <table class="table table-striped table-bordered text-left" id="surveyFormTable1">
+            <thead>
+                <tr>
+                    <th><a href="javascript:void(0)">S No</a></th>
+                    <th><a href="javascript:void(0)">Activity</a></th>
+                    <th><a href="javascript:void(0)">Prohibited
+                            Scenarios</a></th>
+                    <th><a href="javascript:void(0)">Severity</a></th>
+                    <th><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title=""
+                            data-original-title="Talent Acquisition Group">Consequence
+                            in case of breach </a></th>
+
+                    <th><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top"
+                            data-original-title="Policy Action">I Understand</a>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+
+                <ng-container *ngFor="let z of dontSurveyQuestionList; let qNo=index">
+
+                 <ng-container *ngIf="z.id!=47">
+                    <tr>
+
+                        <td class="sr-sec"><span>{{qNo+1}}</span></td>
+                        <ng-container *ngIf="z.id==1 && checkDOJ()">
+                        <td class="quest-td">
+                            <div class="quest-sec">
+                                <span [innerHTML]="z.question"></span>
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <ng-container *ngIf="z.id==1 && !checkDOJ()">
+                        <td class="quest-td">
+                            <div class="quest-sec">
+                                <td><b>Do not share/upload any official ({{ brandConfig.companyShortName }} or Client) data/code/bugs & logs with unauthorized personnel/unauthorized sites 
+                                    (Github etc.)</b></td>
+                            </div>
+                        </td>
+                    </ng-container>
+                    <ng-container *ngIf="z.id!=1 ">
+                        <td class="quest-td">
+                            <div class="quest-sec">
+                                <span [innerHTML]="z.question"></span>
+                            </div>
+                        </td>
+                    </ng-container>
+                        <td class="prohibited-td">
+                            <ul class="margin-cng-ul">
+                                
+                                <span [innerHTML]="z.prohibitedscenarios"></span>
+                            </ul>
+                        </td>
+
+                        <td class="severity">
+                            <ul class="margin-cng-ul">
+                                <span [innerHTML]="z.severity"></span>
+                            </ul>
+                        </td>
+
+                        <td>
+
+
+                            <div class="color-first label-box" *ngIf="z.consequence_first"
+                                [innerHTML]="z.consequence_first"></div>
+                            <div class="color-second label-box" *ngIf="z.consequence_second"
+                                [innerHTML]="z.consequence_second"></div>
+                            <div class="color-third label-box" *ngIf="z.consequence_third"
+                                [innerHTML]="z.consequence_third"></div>
+                        </td>
+
+
+                        <td width="100">
+                            <div class="text-center">
+
+                                <!-- =========== current_tab=0 -->
+                                <ng-container *ngIf="tab_Status==0">
+                                    <label class="customcheck"> <input type="checkbox" class="ansCheck"
+                                            formControlName="{{'ques'+z.id}}" #checkboxes> <span
+                                            class="checkmark"></span>
+                                    </label>
+                                </ng-container>
+                                <!-- =========== current_tab!=0 -->
+                                <ng-container *ngIf="tab_Status!=0">
+                                    <label class="customcheck"> <input type="checkbox" class="ansCheck" checked
+                                            [disabled]="disbale">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </ng-container>
+                            </div>
+
+
+                    </tr>
+                  </ng-container>
+                  <ng-container *ngIf="z.id==47 && checkDOJ()" >
+
+
+                    <tr>
+
+                        <td class="sr-sec"><span>{{qNo+1}}</span></td>
+                        <td class="quest-td">
+                            <div class="quest-sec">
+                                <span [innerHTML]="z.question"></span>
+                            </div>
+                        </td>
+                        <td class="prohibited-td">
+                            <ul class="margin-cng-ul">
+                                
+                                <span [innerHTML]="z.prohibitedscenarios"></span>
+                            </ul>
+                        </td>
+
+                        <td class="severity">
+                            <ul class="margin-cng-ul">
+                                <span [innerHTML]="z.severity"></span>
+                            </ul>
+                        </td>
+
+                        <td>
+
+
+                            <div class="color-first label-box" *ngIf="z.consequence_first"
+                                [innerHTML]="z.consequence_first"></div>
+                            <div class="color-second label-box" *ngIf="z.consequence_second"
+                                [innerHTML]="z.consequence_second"></div>
+                            <div class="color-third label-box" *ngIf="z.consequence_third"
+                                [innerHTML]="z.consequence_third"></div>
+                        </td>
+
+
+                        <td width="100">
+                            <div class="text-center">
+
+                                <!-- =========== current_tab=0 -->
+                                <ng-container *ngIf="tab_Status==0">
+                                    <label class="customcheck"> <input type="checkbox" class="ansCheck"
+                                            formControlName="{{'ques'+z.id}}" #checkboxes> <span
+                                            class="checkmark"></span>
+                                    </label>
+                                </ng-container>
+                                <!-- =========== current_tab!=0 -->
+                                <ng-container *ngIf="tab_Status!=0">
+                                    <label class="customcheck"> <input type="checkbox" class="ansCheck" checked
+                                            [disabled]="disbale">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </ng-container>
+                            </div>
+
+
+                    </tr>
+                    </ng-container>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+
+    <!--    Do Component-->
+    <h2 class="fs-title bg-info">DO's</h2>
+    <div class="table-responsive">
+
+
+
+
+        <table class="table table-striped table-bordered text-left" id="surveyFormTable1">
+            <thead>
+                <tr>
+                    <th><a href="javascript:void(0)">Sr. No.</a></th>
+                    <th><a href="javascript:void(0)">Activity</a></th>
+                    <th><a href="javascript:void(0)">Expected Scenarios</a></th>
+                    <th><a href="javascript:void(0)">Severity</a></th>
+                    <th><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title=""
+                            data-original-title="Talent Acquisition Group">Consequence
+                            in case of breach </a></th>
+
+                    <th><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top"
+                            data-original-title="Policy Action">I Understand</a>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <ng-container *ngFor="let z of doSurveyQuestionList; let qNo=index">
+
+                    <tr>
+
+                        <td class="sr-sec"><span>
+                                {{qNo+1}}
+                            </span></td>
+                            <ng-container *ngIf="z.id==12 && checkDOJ()">
+                        <td class="quest-td">
+                            <div class="quest-sec">
+                                <span [innerHTML]="z.question"></span>
+                            </div>
+                        </td>
+                        </ng-container>
+
+                        <ng-container *ngIf="z.id==12 && !checkDOJ()">
+                            <td class="quest-td">
+                                <div class="quest-sec">
+                                    <td><b>Attend security training and complete
+                                        the assessment within stipulated time
+                                        frame</b></td>
+                                </div>
+                            </td>
+                            </ng-container>
+                            <ng-container *ngIf="z.id!=12">
+                                <td class="quest-td">
+                                    <div class="quest-sec">
+                                        <span [innerHTML]="z.question"></span>
+                                    </div>
+                                </td>
+                                </ng-container>
+
+                        <td class="prohibited-td">
+                            <ul class="margin-cng-ul">
+                                <span [innerHTML]="z.prohibitedscenarios"></span>
+                            </ul>
+                        </td>
+
+                        <td class="severity">
+                            <ul class="margin-cng-ul">
+                                <span [innerHTML]="z.severity"></span>
+                            </ul>
+                        </td>
+
+                        <td>
+
+                            <div class="color-first label-box" *ngIf="z.consequence_first"
+                                [innerHTML]="z.consequence_first"></div>
+
+
+                            <div class="color-second label-box" *ngIf="z.consequence_second"
+                                [innerHTML]="z.consequence_second"></div>
+
+
+                            <div class="color-third label-box" *ngIf="z.consequence_third"
+                                [innerHTML]="z.consequence_third"> </div>
+
+                        </td>
+
+
+                        <td width="100">
+                            <div class="text-center">
+                                <ng-container *ngIf="tab_Status==0">
+
+                                    <label class="customcheck"> <input type="checkbox" class="ansCheck"
+                                            formControlName="{{'ques'+z.id}}" #checkboxes> <span
+                                            class="checkmark"></span>
+                                    </label>
+                                </ng-container>
+
+                                <ng-container *ngIf="tab_Status!=0">
+                                    <label class="customcheck"> <input type="checkbox" class="ansCheck"
+                                            [disabled]="disbale" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </ng-container>
+
+                            </div>
+
+
+                        </td>
+
+
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div>
+        <ul class="margin-cng-ul1">
+            <ng-container *ngIf="checkDOJ()" >
+            <li>Any employee may request an exception to the above
+                data integrity requirements and procedures by contacting
+                their reporting manager and <a [href]="brandConfig.contact.serviceDeskUrl" target="_blank">by creating a ticket on {{ brandConfig.contact.serviceDeskText }}</a> or sending an email to CISO Function at <a
+                    [href]="'mailto:' + brandConfig.contact.cisofunctionEmail">{{ brandConfig.contact.cisofunctionEmail }}</a>.
+            </li>
+            </ng-container>
+            <ng-container *ngIf="!checkDOJ()" >
+                <li>Any employee may request an exception to the above data integrity requirements and procedures by contacting their reporting manager and by initiating a Jira ticket or
+                    sending an email to Information Security team  at <a
+                        [href]="'mailto:' + brandConfig.contact.cisofunctionEmail">{{ brandConfig.contact.cisofunctionEmail }}</a>.</li>
+                </ng-container>
+            <li>A Cyber Security Incident Response Team (CSIRT) comprising
+                members from CISO Function and IT managers will review all security incidents /
+                infractions and determine the consequences for the company
+                and individuals involved.</li>
+                <ng-container *ngIf="checkDOJ()" >
+                <li>All Security/Privacy Incidents and Breaches can be reported at
+                   <a [href]="'mailto:' + brandConfig.contact.cisofunctionEmail">{{ brandConfig.contact.cisofunctionEmail }}</a>/<a [href]="brandConfig.contact.DPOEmail">DPO&#64;Tenarai.com</a>
+                    respectively or by raising an {{brandConfig.companyShortName}} Service Helpdesk Ticket under CISO Function.
+                </li>
+                </ng-container>
+        </ul>
+    </div>
+    <!--   Privacy Disclaimer and Submit Component-->
+
+          <h2 class="fs-title bg-info mt-0">Privacy Policy</h2>
+    <div class="text-left">
+        <p>{{brandConfig.companyShortName}} has the authority to monitor IT system usage
+            and data on its devices at any time. This may include (except
+            where precluded by local privacy laws) examination of the
+            content stored within emails and data files of any user,
+            including the access history of any users. {{brandConfig.companyShortName}} reserves
+            the right to regularly audit networks and systems to ensure
+            compliance with this policy.</p>
+        <p>The organization shall, in conducting such monitoring
+            activities, use all reasonable endeavors to comply with
+            regulatory guidelines.</p>
+            <ng-container *ngIf="checkDOJ()" >
+            <p>Your personal/official data may be transferred to Third-Party Service Providers, 
+                Affiliates, Legal Advisors, Regulatory Authorities, or Business Partners for the purpose(s) 
+                of Analysis, Communication, Research, Recruitment, Marketing, and Business Development.</p>
+            </ng-container>
+
+    </div>
+    <h2 class="fs-title bg-info">Disclaimer</h2>
+    <div class="text-left">
+        <p>The Company reserves the absolute right to alter the
+            Information security policies and associated consequences.</p>
+
+    </div>
+
+    <!-- Employee Details-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+
+
+
+                <table class="table table-borderless no-border table-padding text-left disclaimer-table">
+                    <tbody>
+                        <tr>
+                            <td><strong>Employee Name</strong></td>
+                            <td><strong>: {{emp_name}}</strong></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Employee Code</strong></td>
+                            <td><strong>: {{emp_id}} </strong></td>
+                            <td>&nbsp;</td>
+                        </tr>
+
+
+
+                        <tr>
+                            <td><strong>Date</strong></td>
+                            <!--<c:if test="${current_tab == 0}">-->
+                            <td *ngIf="tab_Status==0"><strong>:
+                                    <!--<%=session.getAttribute("dateString")%>-->
+                                    {{getDate|date:'dd-MM-yyyy hh:mm:ss' }}
+                                </strong></td>
+                            <!--</c:if>
+									<c:if test="${current_tab != 0}">--->
+                            <td *ngIf="tab_Status!=0"><strong>:
+                                    <!--<%=session.getAttribute("tab1_date")%>-->
+                                    {{date| date:'dd-MM-yyyy hh:mm:ss'}}
+                                </strong></td>
+                            <!--</c:if>-->
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--Submit Buttion Code-->
+
+    <p>
+
+        <ng-container *ngIf="tab_Status==0">
+            <input id="field_terms1" type="checkbox" required name="terms" #agree>
+        </ng-container>
+        <ng-container *ngIf="tab_Status!=0">
+            <input id="field_terms1" type="checkbox" required name="terms" disabled checked>
+        </ng-container>
+        I understand the DOs and DONTs mentioned on the page and shall
+        abide by them.<br /> <br />
+    </p>
+    <ng-container *ngIf="tab_Status==0">
+        <div class="btn-wrapper">
+            <div class="btn-inner">
+                <input type="submit" name="submit" class="submit action-button" value="Submit" id="submitInputForm1" />
+            </div>
+        </div>
+    </ng-container>
+</form>
+<!--  Confirmation Code  -->
+<div #confirmmodel id="alertConfirm" class="modal alert-model confirm-model" role="dialog">
+    <div class="modal-dialog  modal-sm">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="closeConfirmationModel()">&times;</button>
+                <h4 class="modal-title">Confirm</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <span>Hope you have carefully reviewed your responses. No
+                        changes can be made post submission. </span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)="sumitSurveyForm()">Ok</button>
+                <button type="button" class="btn btn-default" (click)="closeConfirmationModel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pop Up Arise when remaining checkboxes are not checked-->
+<div #alertmodel class="modal alert-model" role="dialog">
+    <div class="modal-dialog  modal-sm">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" (click)="closeAlertModal()">&times;</button>
+                <!-- <h4 class="modal-title">Alert</h4> -->
+            </div>
+            <div class="modal-body">
+                <p>
+                    <span id="alertMsg1">{{alertText}}</span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"
+                    (click)="closeAlertModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--loader-->
+<div class="loader-wrap" [ngClass]="{'show':showLoader}">
+    <div class="loader-inner">
+        <img src="assets/images/ajax-loader.gif">
+        <span>Please wait...</span>
+    </div>
+</div>

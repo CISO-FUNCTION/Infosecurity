@@ -1,0 +1,315 @@
+<!--{{  |json}}-->
+
+
+<div class="row">
+    <div class="col-md-12">
+    
+
+        <div class="log-info clearfix">
+            <div class="log-out pull-right">
+
+                <a (click)="logOut()">
+                    <i class="fas fa-sign-out-alt"></i> LogOut
+                </a>
+
+            </div>
+            <div class="log-inner pull-right">
+                <i class="fas fa-user"></i>
+                <!-- <%=session.getAttribute("empName")%> -->&nbsp; Hi {{emp_name}}
+            </div>
+            <div class="pull-right counter-count">
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                                
+                                <li class="dropdown togglelist"><a  class="dropdown-toggle padding-right-11" title="Currently Logged-In Users" data-toggle="dropdown" href="#">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    <span class="badge">
+                                            <!-- ${getActiveUsersWithInOneHourSize} -->{{uservisitcountonehour}}
+                                    </span></a>
+                                            
+                                    <ul id="ctl00_dvLoggedInUser" class="dvLoggedInUser dropdown-menu adj" >
+                                    <li class="adj00">
+                                        <!-- Top ${getActiveUsersWithInOneHourSize} Users are Logged-In -->Top {{uservisitcountonehour}} Users are Logged In
+                                    </li>
+                                    <!-- <c:if test="${not empty getActiveUsersWithInOneHour}">
+                                                <c:forEach items="${getActiveUsersWithInOneHour}" var="temp8"> -->
+                                    <li class="multiuser" *ngFor="let z of uservisitCountforOneHour">
+                                    <div class="image"></div>
+                                    <div class="content">
+                                    <strong>
+                                        <!-- ${temp8.getEmpName()} -->
+                                        {{z.EMP_Name}}
+                                    </strong>
+                                    <p class="forn-14">
+                                        <!-- ${temp8.getDesignation() } -->
+                                        {{z.designation}}
+                                    </p>
+                                    </div>
+                                    <div class="location">
+                                    <p>
+                                        <!-- ${temp8.getLocationName() } -->
+                                        {{z.Location_name}}
+                                    </p>
+                                    <p class="pstl">
+                                        <!-- ${temp8.getLoginCount() } -->
+                                        {{z.actual}}
+                                    </p>
+                                    </div> 
+                                    </li>
+                                    <!-- </c:forEach>
+                                                 </c:if> -->
+                                 
+                                   
+                              </ul>
+                                </li>
+                                <li class="nav-item dropdown togglelist"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="Frequent Users">
+                                    <span class="glyphicon glyphicon-book"></span><span class="badge">
+                                            <span id="ctl00_lblTotalResularUsers">
+                                                <!-- ${arrRegularUserSize} -->{{userVisitCoutLength}}
+                                            </span></span></a>
+                                    <ul class="dropdown-menu drp-dd" >
+                                        <li class="tdpdd0">
+                                            <table  class="table table-stripped tableempdetail tbl100">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Employee Name
+                                                        </th>
+                                                        <th>Designation
+                                                        </th>
+                                                        <th class="width75">Location
+                                                        </th>
+                                                        <th class="width45">Visits
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="ctl00_dvRegularUsers" class="thpcol">
+                                                <!-- <c:if test="${not empty arrRegularUser}">
+                                                <c:forEach items="${arrRegularUser}" var="temp7"> -->
+                                                   
+                                                <tr *ngFor="let x of userVisitCountList?.data">
+                                                <td>
+                                                    <!-- ${temp7.getEmpName() } -->{{x.EMP_Name}}
+                                                </td>
+                                                <td>
+                                                    <!-- ${temp7.getDesignation() } -->{{x.Designation}}
+
+                                                </td>
+                                                <td>
+                                                    <!-- ${temp7.getLocationName() } -->{{x.LOCATION_NAME}}
+
+                                                </td>
+                                                <td>
+                                                    <!-- ${temp7.getLoginCount() } -->{{x.LOGINCOUNT}}
+
+                                                </td>
+                                                </tr>
+                                                 <!-- </c:forEach>
+                                                 </c:if> -->
+                                                    
+                                              </tbody>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="welcome-text"><span id="ctl00_lblNoOfVisits" class="adj001" title="Effective from 06 Oct 2022">Number of Visits : <b>
+                                    <!-- <%=session.getAttribute("count")%> -->{{totalCount}}
+                                </b></span></li>
+                            </ul>
+                    </div>
+        </div>
+
+        <form id="msform" class="horizontal-form">
+            <div class="tab-content-sec" id='tabs'>
+                <div class="tab-content">
+                    <div id="Overall-Data-Security-and-Data-Privacy"
+                        class="tab-pane fade in active">
+                        <h3 class="tab-title">Overall Data Security and Data Privacy</h3>
+                        <div class="fieldset">
+
+                            <h2 class="fs-title bg-info mt-0">Purpose</h2>
+                            <ng-container *ngIf="checkDOJ()" >
+                            <div class="text-left">The purpose of this document is to
+                                convey the key DOs and DONTs w.r.t information security, privacy, and the
+                                potential impact on {{brandConfig.companyShortName}} when these are not followed. In
+                                addition, we have provided consequences for non-adherence and
+                                the process for requesting exceptions.</div>
+                            </ng-container>
+                            <ng-container *ngIf="!checkDOJ()" >
+                            <div class="text-left">
+                            The purpose of this document is to 
+                            convey the key DOs and DONTs w.r.t information security and 
+                            the potential impact to {{brandConfig.companyShortName}} when these are not followed. In addition,
+                            we have provided consequences of non-adherence and 
+                            the process for requesting exceptions.</div>
+                         </ng-container>
+
+
+                            <h2 class="fs-title bg-info">Definitions</h2>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+
+                                        <table
+												class="table table-striped table-bordered table-padding text-left">
+												<thead>
+													<tr>
+														<th class="tdpdd">Terms used</th>
+														<th class="tdpdd">Definition</th>
+													</tr>
+												</thead>
+												<tbody> 
+													<tr>
+														<td>Credentials</td>
+														<td>The user ID and / or password used to gain access
+															to any {{brandConfig.companyShortName}}, client, or any third party application
+															or system.</td>
+													</tr>
+													<tr>
+														<td>Confidential information/ Official Data ({{brandConfig.companyShortName}}
+															or Client)</td>
+														<td>Business-related information or documents that
+															the organization does not intend to make public or share
+															beyond the {{brandConfig.companyShortName}} team.</td>
+													</tr>
+													<tr>
+														<td>Information Security Event/Security Breach</td>
+														<td>A cyber event or security breach is any incident
+															that results in unauthorized access to computer data,
+															applications, networks or devices, that could potentially
+															lead to a compromise of the confidentiality, integrity or
+															availability of any information or system.</td>
+													</tr>
+                                                    <ng-container *ngIf="checkDOJ()" >
+
+                                                    <tr>
+														<td>Privacy Incident</td>
+														<td>Shall be defined as any activity performed in contravention of applicable privacy and data protection laws and regulations of the country.</td>
+													</tr>
+                                                    <tr>
+														<td>Privacy Breach</td>
+														<td>Privacy Incidents can result in a Privacy Breach when the information compromised reveals any type of Personal Data. Privacy breaches may occur due to unauthorized access, unauthorized disclosure, misuse, theft or loss, etc.</td>
+													</tr>
+
+                                                    </ng-container>
+
+													<tr>
+														<th colspan="2" bgColor="#d9edf7" class="tdpdd0">
+															<h2 class="fs-title bg-info mb-0 mt-0">Event/Breach
+																Classification</h2>
+														</th>
+													</tr>
+                                                    </tbody>
+													<!-- <div class="row"> -->
+									
+
+											
+												
+												<thead>
+													<tr>
+														<th class="tdpdd">Level</th>
+														<th class="tdpdd">Description</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Critical</td>
+														<td>The incident prevents continuity of one or more
+														activities that are extremely critical to the organization&rsquo;s 
+														operations, <b>OR</b> more than 20 users have been impacted.
+														</td>
+													</tr>
+													<tr>
+														<td>High</td>
+														<td>The incident prevents the use of equipment or of an application
+														or system and this significantly affects the organization&rsquo;s
+														activities such incidents could be security policies violation, 
+														earthquakes, fire, storm ,IT system failure etc) <b>OR</b> more than
+														15 users have been impacted.
+														</td>
+													</tr>
+													<tr>
+														<td>Medium</td>
+														<td>The incident only affects one group of users and/or the 
+														disrupted activities are not critical to the organization&rsquo;s
+														operations.These include a major power or communication failure,
+														network outage, etc) and some external man made and environmental 
+														incidents over wider area.<b>OR</b> more than 10 users have been impacted. 
+														</td>
+													</tr>
+													<tr>
+														<td>Low</td>
+														<td>The incident only affects one person The disrupted activities are not
+														critical to the organization&rsquo;s operations.These include minor outages,
+														network intrusions or failures and system crashes impacting few services/applications
+														or limited to few business functions These are outages that will impact a part of a 
+														business or process that can be recovered in shorter times viz,.few minutes to less than
+														an hour. <b>OR</b> less than 5 users have been impacted. 
+														</td>
+													</tr>
+
+												</tbody>
+											</table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 colortab">
+                                    <div class="table-responsive ">
+                                        <table class="table table-striped table-bordered mb-0">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="text-center">Color Code</th>
+                                                    <td class="color-first width20" ></td>
+                                                    <td class="color-second width20"></td>
+                                                    <td class="color-third width20"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="alhm">Occurrence</th>
+                                                    <td class="text-center">1<sup>st</sup> Occurrence
+                                                    </td>
+                                                    <td class="text-center">2<sup>nd</sup> Occurrence
+                                                    </td>
+                                                    <td class="text-center">3<sup>rd</sup> Occurrence
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <dont-survey-page></dont-survey-page>
+                            
+
+
+
+
+                            
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+         </div>
+         </div>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

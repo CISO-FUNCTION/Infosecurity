@@ -1,0 +1,1045 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+/*custom font*/
+@import url('../node_modules/font-awesome/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css');
+
+/*basic reset*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+}
+
+.list-styled{
+	list-style-type: disc;
+    list-style: disc;
+    padding-left: 16px;
+}
+.list-styled li{
+	text-align:left;
+}
+
+body {
+	font-family: arial, Arial, Helvetica, sans-serif;
+	background-image: linear-gradient(45deg, #673AB7, #3F51B5);
+	background-image: linear-gradient(7deg, #364f11, #000000);
+	overflow-x: hidden;
+	height: 100vh;
+	background: #f1ece6;
+}
+
+
+/*form styles*/
+
+#msform {
+	position: relative;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.form-boxed {
+	width: 70%;
+	margin: auto;
+	overflow: hidden;
+	text-align: left
+}
+
+/*#msform .fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 0px;
+	padding: 20px 20px;
+	box-sizing: border-box;
+	margin: 0 3% 3% 3%;
+	position: relative;
+}*/
+
+#msform .fieldset label {
+	font-size: 14px;
+	text-align: left;
+}
+
+#msform .last-form label {
+	font-size: 14px;
+	text-align: left;
+	padding: 7px 0px;
+	margin-bottom: 0px;
+	display: block;
+}
+
+.table thead th {
+	white-space: nowrap !important;
+}
+
+
+/*inputs*/
+
+#msform input,
+#msform textarea,
+.form-control {
+	border: 1px solid #ccc;
+	border-radius: 0px;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+
+#msform input:focus,
+#msform textarea:focus,
+.form-control:focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border: 1px solid #1885d0;
+	outline-width: 0;
+	transition: All 0.5s ease-in;
+	-webkit-transition: All 0.5s ease-in;
+	-moz-transition: All 0.5s ease-in;
+	-o-transition: All 0.5s ease-in;
+}
+
+#msform .table .ansCheck{
+	width: 20px !important;
+    height: 20px !important;
+}
+/*buttons*/
+
+#msform .action-button {
+	padding: 10px 18px;
+	border-radius: 50px !important;
+	border: 0px;
+	background: linear-gradient(45deg, #000000, #000000);
+	color: #ffffff;
+	font-size: 18px;
+	display: inline-block;
+	margin-left: 17px;
+	transition: transform .2s;
+	cursor: pointer;
+	width: auto;
+	outline: none;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+	transform: scale(1.05);
+}
+
+#msform .action-button-previous {
+	padding: 10px 18px;
+	border-radius: 50px !important;
+	border: 0px;
+	background: linear-gradient(45deg, #00BCD4, #2196F3);
+	color: #ffffff;
+	font-size: 18px;
+	display: inline-block;
+	margin-left: 17px;
+	transition: transform .2s;
+	cursor: pointer;
+	width: auto;
+	outline: none;
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+	transform: scale(1.05);
+}
+
+
+/*headings*/
+
+.fs-title {
+	    font-size: 19px;
+    padding: 4px 4px;
+    color: #5a524b;
+	margin-bottom: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+
+.colour-left{
+	float: right;
+}
+/*progressbar*/
+
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+	display: flex;
+	justify-content: center;
+	width: 80%;
+	margin: 2% 10%;
+	text-align: center
+}
+
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	font-size: 12px;
+	width: 19.33%;
+	position: relative;
+}
+
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 24px;
+	height: 24px;
+	line-height: 26px;
+	display: block;
+	font-size: 12px;
+	color: #333;
+	background: white;
+	border-radius: 25px;
+	margin: 0 auto 10px auto;
+}
+
+
+/*progressbar connectors*/
+
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1;
+	/*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none;
+}
+
+
+/*marking active/completed steps green*/
+
+
+/*The number of the step and the connector before it = green*/
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+	background: #4CAF50;
+	color: white;
+}
+
+
+/* Not relevant to this form */
+
+.dme_link {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.dme_link a {
+	background: #FFF;
+	font-weight: bold;
+	color: #1885d0;
+	border: 0 none;
+	border-radius: 25px;
+	cursor: pointer;
+	padding: 5px 25px;
+	font-size: 12px;
+}
+
+.dme_link a:hover,
+.dme_link a:focus {
+	background: #C5C5F1;
+	text-decoration: none;
+}
+
+.form-button {
+	clear: both;
+	text-align: center;
+}
+
+.form-group label {
+	margin-top: 0px;
+}
+
+.form-group {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.last-form .form-group {
+	overflow: hidden;
+	margin-bottom: 10px;
+	padding: 7px;
+}
+
+textarea {
+	resize: vertical
+}
+
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.page-title {
+	text-align: center;
+	color: #000000;
+	margin: 0px;
+	padding: 20px;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+	padding: 5px 6px;
+}
+
+.table>tbody>tr>td {
+	vertical-align: middle;
+	font-size: 13px;
+}
+
+.table>tbody>tr>td select.input-sm {
+	display: inline-block;
+	border-radius: 4px;
+}
+
+.table>tbody>tr>td.highlight {
+	background: #ff7474;
+}
+
+.table>tbody>tr>td.hightlight-quest {
+	background: #fcff65;
+	box-shadow: 2px 2px 3px rgba(45, 45, 44, 0.42);
+}
+
+.table>thead>tr>th {
+	background: #000000;
+	color: #fff;
+	text-align: center;
+	padding:0;
+}
+.table>thead>tr>th a{
+color: #fff;
+    display: block;
+    padding: 5px 6px;
+}
+.table>thead>tr>th a:focus,
+.table>thead>tr>th a:active{
+	text-decoration:none;
+}
+
+.table>tbody>tr>td.sr-sec {
+	text-align: center;
+}
+
+.table>tbody>tr>td.sr-sec span,
+.table>tbody>tr>td .quest-sec span {
+	font-weight: bold;
+}
+
+.quest-sec {
+	width: 240px;
+	line-height: 16px;
+	position: relative;
+}
+
+.table>tbody>tr>td.hightlight-quest .quest-sec::after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #fcff65;
+	position: absolute;
+	top: 50%;
+	margin-top: -11px;
+	right: -13px;
+	/* left: 0; */
+	/* margin: auto; */
+}
+
+.alert-model .modal-footer,
+.alert-model .modal-header {
+padding: 4px 10px;
+    background-color: #fdfdfd;
+    border-color: #d8d8d8;
+}
+.table>tbody>tr>td textarea{
+	width:98px;
+	height:60px;
+	font-size: 11px !important;
+	    padding: 2px;
+	
+}
+
+.alert-model .modal-title {
+	line-height: 16px;
+	color: #bd0404;
+	font-size: 18px;
+}
+
+.alert-model .modal-body {
+    padding: 4px 10px;
+    background-color: #fdfdfd;
+}
+
+.alert-model .modal-body p {
+	margin: 0px;
+	color: #c32020;
+	font-size: 13px;
+	line-height: 15px;
+	overflow-wrap: break-word;
+}
+
+.alert-model .btn-default {
+	color: #fff;
+	background-color: #bd0404;
+	border-color: #ad0505;
+	padding: 4px 10px;
+	font-size: 12px;
+}
+
+.alert-model.suc-model .modal-footer,
+.alert-model.suc-model .modal-header {
+	background-color: #dbffd6;
+	border-color: #a2fb96;
+}
+
+.alert-model.suc-model .modal-title {
+	color: #185610;
+}
+
+.alert-model.suc-model .modal-body {
+	background-color: #dbffd6;
+}
+
+.alert-model.suc-model .modal-body p {
+	color: #13560a;
+}
+
+.alert-model.suc-model .btn-default {
+	background-color: #185610;
+	border-color: #185610;
+}
+
+.alert-model.confirm-model .modal-footer,
+.alert-model.confirm-model .modal-header {
+	background-color: #ffffff;
+	border-color: #e8e8e8;
+}
+
+.alert-model.confirm-model .modal-title {
+	color: #6f6f6f;
+}
+
+.alert-model.confirm-model .modal-body {
+	background-color: #ffffff;
+}
+
+.alert-model.confirm-model .modal-body p {
+	color: #6f6f6f;
+}
+
+.alert-model.confirm-model .btn-default {
+	background-color: #565656;
+	border-color: #4c4a4a;
+}
+
+.alert-model .btn-default:hover {
+	opacity: 0.7;
+}
+
+.fade-scale {
+	transform: scale(0);
+	opacity: 0;
+	-webkit-transition: all .55s linear;
+	-o-transition: all .55s linear;
+	transition: all .55s linear;
+}
+
+.fade-scale.in {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.loader-wrap {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: rgba(6, 5, 5, 0.14);
+	display: none;
+}
+
+.loader-wrap .loader-inner {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	width: 150px;
+	margin: auto;
+	background: #fff;
+	padding: 10px;
+	text-align: center;
+	margin-top: 113px;
+	border-radius: 19px;
+}
+
+.loader-wrap .loader-inner img {
+	width: 50%;
+}
+
+.loader-wrap .loader-inner span {
+	display: block;
+	color: #3c449d;
+}
+
+.input-form-sec .form-row textarea {
+	height: 34px;
+}
+
+.input-form-sec .tab {
+	background: #ffffff;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.24);
+	padding: 10px 10px;
+	margin-bottom: 20px;
+	border: solid 1px #e0e0e0;
+	border-radius: 5px;
+}
+
+.input-form-sec .tab .fs-title {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	position: relative;
+	padding: 7px 50px;
+}
+
+.input-form-sec .tab .fs-title::after,
+.input-form-sec .tab .fs-title::before {
+	content: "";
+	background-color: #e91e63;
+	height: 100%;
+	width: 52px;
+	position: absolute;
+	right: -8px;
+	top: 0px;
+	transform: skew(30deg);
+	-webkit-transform: skew(30deg);
+	-moz-transform: skew(30deg);
+	-o-transform: skew(30deg);
+}
+
+.input-form-sec .tab .fs-title::before {
+	transform: skew(-30deg);
+	-webkit-transform: skew(-30deg);
+	-moz-transform: skew(-30deg);
+	-o-transform: skew(-30deg);
+	right: auto;
+	left: -8px;
+	background-color: #e91e63;
+	border-top-left-radius: 5px;
+}
+
+.input-form-sec .tab .fs-title::after {
+	border-top-right-radius: 5px;
+}
+
+.dp-title .fs-title {
+	background: #E91E63;
+	color: #fff;
+	padding: 7px 13px;
+	display: inline-block;
+	border-radius: 16px;
+	position: relative;
+	min-width: 220px;
+	box-shadow: 0 4px 4px #b90442;
+	-webkit-box-shadow: 0 4px 4px #b90442;
+	-moz-box-shadow: 0 4px 4px #b90442;
+	font-size: 19px;
+	text-shadow: 2px 2px 1px #6b0024;
+}
+
+.btn-wrapper {
+	position: fixed;
+	width: 100%;
+	margin: 0px;
+	bottom: 0px;
+	background: #000000;
+	left: 0px;
+	padding: 5px 0px;
+}
+
+.btn-wrapper .btn-inner {
+	background: white;
+	border: 0 none;
+	border-radius: 0px;
+	padding: 5px 20px;
+	box-sizing: border-box;
+	margin: 0 3% 0% 3%;
+	position: relative;
+	box-shadow: 0px -1px 7px rgba(0, 0, 0, 0.25);
+}
+
+.input-form-sec {
+	margin-bottom: 80px !important;
+}
+
+.log-info {
+	background: #000;
+	border: 0 none;
+	border-radius: 0px;
+	box-sizing: border-box;
+	margin: 0 3% 0% 3%;
+	position: relative;
+	margin-bottom: -30px;
+}
+
+.log-info .log-out,
+.log-info .log-inner {
+	padding: 5px 10px;
+	color: #fff;
+	font-size: 13px;
+}
+
+.log-info .log-inner {
+	padding: 7px 10px;
+	font-size: 14px;
+	font-weight: bold;
+	
+}
+
+.log-info .log-out a {
+	color: #000000;
+	background: #fff;
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: bold;
+	transition: ease 0.7s;
+}
+
+.log-info .log-out a:hover {
+	background: #8CF000;
+	color: #000000;
+}
+
+.error-wrapper {
+	width: 600px;
+	margin: 0px auto;
+	background: white;
+	padding: 35px 20px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 4px;
+	margin-top: 120px;
+	font-size: 22px;
+	box-shadow: 0px 0px 14px #fff;
+}
+
+.tab-focus{
+	opacity:0;
+	    position: absolute;
+}
+
+.comment-sec {
+	text-align: left;
+	padding-bottom: 20px;
+}
+
+.comment-sec sup {
+	color: red;
+	font-size: 18px;
+	top: -.2em;
+}
+
+.comment-sec textarea {
+	height: 55px;
+}
+.tab-quest.error{
+	    background: #f6ff79;
+    padding: 4px 4px;
+}
+.guide-sec{
+	    padding: 15px 20px !important;
+}
+.guide-sec .fs-title{
+	margin:0px !important;
+	font-size: 20px;
+}
+#msform  .len-count{
+	 text-align: right;
+}
+#msform  .len-count label {
+    font-size: 14px;
+    text-align: right;
+    padding: 0px 0px;
+    margin-bottom: 0px;
+    display: inline-block;
+    font-size: 12px;
+}
+#msform  .len-count label.max-ex{
+	color:red
+}
+
+/* Bootstrap Form */
+
+#regForm {
+	/*display:none;*/
+	background-color: #ffffff;
+}
+
+
+#regForm h1 {
+	text-align: center;
+}
+
+
+/* Mark input boxes that gets an error on validation: */
+
+#regForm input.invalid {
+	background-color: #ffdddd;
+}
+
+#regForm .form-group {
+	padding: inherit;
+}
+
+#regForm label {
+	padding: 7px 0px;
+}
+
+#regForm button {
+	padding: 5px 18px;
+	border-radius: 50px !important;
+	border: 2px solid #8d2cb2;
+	background: #8d2cb2;
+	color: #ffffff;
+	font-size: 13px;
+	margin-left: 6px;
+	transition: transform .2s;
+	cursor: pointer;
+	width: auto;
+	outline: none;
+}
+
+#regForm button:hover {
+	transform: scale(1.05);
+}
+
+#regForm #prevBtn {
+	background-color: #ffffff;
+	color: #8d2cb2;
+}
+
+#regForm #prevBtn:hover {
+	background-color: #8d2cb2;
+	color: #ffffff;
+	transform: scale(1.05);
+}
+
+
+/* Make circles that indicate the steps of the form: */
+
+#regForm .step {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #E91E63;
+	border: none;
+	border-radius: 50%;
+	display: inline-block;
+	opacity: 0.4;
+}
+
+#regForm .step.active {
+	opacity: 1;
+}
+
+
+/* Mark the steps that are finished and valid: */
+
+#regForm .step.finish {
+	background-color: #4CAF50;
+}
+
+
+/* Animation */
+
+@keyframes move_wave {
+	0% {
+		transform: translateX(0) translateZ(0) scaleY(1)
+	}
+	50% {
+		transform: translateX(-25%) translateZ(0) scaleY(0.55)
+	}
+	100% {
+		transform: translateX(-50%) translateZ(0) scaleY(1)
+	}
+}
+
+.waveWrapper {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: -12px;
+	margin: auto;
+	z-index: -1;
+}
+
+.waveWrapperInner {
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+	height: 100px;
+	top: -34px;
+}
+
+.bgTop {
+	z-index: 15;
+	opacity: 0.5;
+}
+
+.bgMiddle {
+	z-index: 10;
+	opacity: 0.75;
+}
+
+.bgBottom {
+	z-index: 5;
+}
+
+.wave {
+	position: absolute;
+	left: 0;
+	width: 200%;
+	height: 100%;
+	background-repeat: repeat no-repeat;
+	background-position: 0 bottom;
+	transform-origin: center bottom;
+}
+
+.waveTop {
+	background-size: 50% 100px;
+}
+
+.waveAnimation .waveTop {
+	animation: move-wave 3s;
+	-webkit-animation: move-wave 3s;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.waveMiddle {
+	background-size: 50% 120px;
+}
+
+.waveAnimation .waveMiddle {
+	animation: move_wave 10s linear infinite;
+}
+
+.waveBottom {
+	background-size: 50% 100px;
+}
+
+.waveAnimation .waveBottom {
+	animation: move_wave 15s linear infinite;
+}
+
+
+/* Close Animation */
+
+
+/* green checkbox */
+/* The customcheck*/
+.customcheck {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+
+/* Hide the browser's default checkbox */
+.customcheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border: 1px solid #4e49b6;
+}
+
+/* On mouse-over, add a grey background color */
+.customcheck:hover input ~ .checkmark {
+  background-color: #ccc;
+  border: 1px solid #ccc
+}
+
+/* When the checkbox is checked, add a blue background */
+.customcheck input:checked ~ .checkmark {
+  background-color:  #4CAF50;
+  border: 1px solid  #4CAF50;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.customcheck input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.customcheck .checkmark:after {
+     left: 8px;
+    top: 2px;
+    width: 8px;
+    height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* close  green checkbox */
+
+.bg-info {
+    background-color: #ebd7c4 !important;
+}
+/*--new-css--*/
+
+.disclaimer-table tbody tr td:nth-child(1) {
+    width: 45%;
+}
+.tab-content-sec {
+    background: #ffffff;
+    border: 0 none;
+    border-radius: 0px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    margin: 0 3% 3% 3%;
+    position: relative;
+}
+.tab-content-sec .nav-tabs {
+    border-bottom: 1px solid #3c45a1;
+}
+.tab-content-sec .nav-tabs>li.active>a, .tab-content-sec .nav-tabs>li.active>a:focus, .tab-content-sec .nav-tabs>li.active>a:hover {
+    color: #333;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #3c45a1;
+    border-bottom-color: transparent;
+}
+.tab-content-sec .nav-tabs>li>a:hover {
+    border-color: #7c41b9 #7c41b9 #7c41b9;
+}
+.tab-content-sec .nav>li>a:focus, .tab-content-sec .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #7c41b9;
+    color: #fff;
+}
+.tab-content-sec .nav-tabs>li>a {
+    background: #3c46a1;
+    color: #fff;
+    /*cursor: not-allowed;
+    pointer-events: none;*/
+}
+#thankyou .modal-sm {
+    box-shadow: 0px 9px 13px 0px rgb(67 38 218 / 50%);
+}
+#thankyou .modal-sm .close {
+    border: 1px solid #4250b5;
+    background: #4250b5;
+    opacity: 1;
+    color: #fff;
+    width: 30px;
+    height: 27px;
+}
+#thankyou .modal-sm h4.modal-title {
+    text-align: center;
+    padding: 49px 0;
+    font-size: 45px;
+    color: #166f10;
+}
+#thankyou .modal-sm .modal-body p {
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    line-height: 22px;
+    padding-bottom: 40px;
+}
+#thankyou .modal-sm .thankyou-footer-text p {
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+}
+#thankyou .modal-sm .modal-header {
+    border: 0px;
+    padding-right: 2px;
+}
+.log-out{
+	cursor: pointer;
+}
+
+
+@media (min-width: 768px){
+#thankyou .modal-sm {
+    width: 500px;
+}
+}
+
+
+#day1 {
+	background: none;
+	background-color: #f8f8f8 !important;
+	height: 100vh !important;
+	width: 100vw !important;
+}
+
+/*--new-css-end--*/

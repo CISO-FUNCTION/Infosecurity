@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<!-- <meta charset="utf-8"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+	<title>{{ appConstants.pageTitle.login }}</title>
+	<!-- Bootstrap CSS -->
+	<!-- Latest compiled and minified CSS -->
+	<!-- <link rel="stylesheet" href="<%=request.getContextPath() %>/bootstrap/css/bootstrap.min.css"> -->
+	<!-- <link rel="stylesheet" href="<%=request.getContextPath() %>/css/login.css"> -->
+	<!-- <%            
+		  response.setHeader("pragma", "no-cache");            
+		  response.setHeader("Cache-control", "no-cache, no-store, must-revalidate");           
+		  response.setHeader("Expires", "0");
+        %>  -->
+</head>
+
+<body>
+
+	<div class="login-wrapper">
+		<div class="container-fluid">
+			<div class="login-header">
+				<h1>{{ appConstants.pageTitle.login }}</h1>
+			</div>
+			<div class="login-body">
+				<div class="login-sec clearfix">
+					<div class="login-left">
+						<div class="login-form-wrapper">
+							<div class="login-form-pad clearfixes">
+								<form class="form-login" (ngSubmit)="loginSubmit(loginForm)" #loginForm="ngForm">
+									<div class="login-form">
+										<div class="login-logo">
+											<img [src]="brandConfig.logo.login" [alt]="brandConfig.logo.alt">
+										</div>
+										<div class="login-control-sec">
+											<div class="login-control-row">
+												<input type="text" class="form-control" name="userName"
+													placeholder="User Name" ngModel>
+											</div>
+											<!-- end row -->
+											<div class="login-control-row">
+												<input type="password" class="form-control" name="password"
+													placeholder="Password" ngModel>
+											</div>
+											<!-- end row -->
+											<div class="login-control-row login-btn-wrap">
+												<input type="submit" class="btn btn-primary login-btn"
+													placeholder="login" value="Login" name="login">
+											</div>
+											<!-- end row -->
+											<div class="login-control-row alert-div-sec" *ngIf="notValidUserMessage">
+												<!--<c:if test="${msg!=null }">-->
+												<div class="alert-div" id="divLoginAlerts">
+													<p class="login-error">{{notValidUserMessage}} </p>
+												</div>
+
+
+											</div>
+										</div>
+									</div>
+									<!--  end login form -->
+								</form>
+								<div class="banner-sec pull-right"><img [src]="brandConfig.logo.secondary" [alt]="brandConfig.logo.alt"></div>
+							</div>
+							<!--  end login pad -->
+						</div>
+						<!--  end login form wrapper -->
+					</div>
+					<div class="login-right">
+					</div>
+				</div>
+			</div>
+			<div class="login-footer">
+				<p>
+					{{ brandConfig.copyright.shortText }}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!--loader-->
+	<div class="loader-wrap" [ngClass]="{'show':showLoader}">
+		<h3 class="page-title">{{ appConstants.pageTitle.login }}</h3>
+		<div class="loader-inner">
+			<img src="assets/images/ajax-loader.gif">
+			<span>Please wait...</span>
+		</div>
+	</div>
+
+</body>
+
+</html>

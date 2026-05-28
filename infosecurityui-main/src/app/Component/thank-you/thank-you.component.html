@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/png" href="https://aspire.infogain.com/content/brand/fevicon64.png" sizes="64x64">
+  <title>{{ appConstants.pageTitle.survey }}</title>
+  <style>
+     body{
+        background-image: none;
+     }
+     .thankyou-wrapper{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+
+     .thankyou-wrapper img{
+        width: calc(100vw - 350px);
+        height: calc(100vh - 100px);
+    }
+
+  </style>
+</head>
+<body>
+    <div class="thankyou-wrapper"> 
+        <div>      
+          <img [src]="brandConfig.images.thankYou" alt="Thank you">
+        </div> 
+  </div>
+</body>
+
+</html>
